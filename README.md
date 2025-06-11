@@ -1,7 +1,5 @@
 # MCP Server Template
 
-## 概要
-
 Claude Codeで開発する用のMCPサーバーテンプレート
 
 ## ディレクトリ構造
@@ -37,8 +35,8 @@ mcp-template/
 
 ## カスタムコマンド
 
-- `/project:rule`: プロジェクトのルールをに確認する(CLAUDE.mdがどのように読み取られているかを確認する)
-- `/project:task`: プロジェクトのタスクを確認する
+- `/project:rule`: プロジェクトのルールをに確認する
+- `/project:task`: タスクの件数を確認する
 
 ## 参考リンク
 
