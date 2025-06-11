@@ -1,0 +1,53 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp:*)",
+      "Bash(date)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(mv:*)",
+      "Bash(npm run:*)",
+      "Bash(pwd)",
+      "Bash(tree:*)",
+      "Edit(README.md)",
+      "Edit(project/requirements-definition.md)",
+      "Edit(project/tasks/**)",
+      "Edit(src/**)",
+      "Glob",
+      "Grep",
+      "LS",
+      "MultiEdit(project/tasks/**)",
+      "MultiEdit(src/**)",
+      "Read(README.md)",
+      "Read(node_modules/**)",
+      "Read(package.json)",
+      "Read(project/RULE.md)",
+      "Read(project/rederences/**)",
+      "Read(project/requirements-definition.md)",
+      "Read(project/tasks/**)",
+      "Read(project/TECH_STACK.md)",
+      "Read(project/template/DEVELOPMENT_TASK_TEMPLATE.md)",
+      "Read(src/**)",
+      "Read(tsconfig.json)",
+      "Read(vitest.config.ts)",
+      "TodoRead",
+      "TodoWrite",
+      "Write(README.md)",
+      "Write(project/tasks/**)",
+      "Write(src/**)"
+    ],
+    "deny": [
+      "Bash(curl:*)",
+      "Bash(git:*)",
+      "Bash(npm install:*)",
+      "Bash(npm test)",
+      "Bash(npm uninstall:*)",
+      "Bash(wget:*)",
+      "NotebookEdit(*)",
+      "NotebookRead(*)",
+      "WebFetch(domain:*)",
+      "WebSearch(domain:*)"
+    ]
+  },
+  "enabledMcpjsonServers": []
+}
