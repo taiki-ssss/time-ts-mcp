@@ -4,4 +4,6 @@
 - **スキーマバリデーション**: `zod`
 - **テストフレームワーク**: `vitest`
 - **テストカバレッジツール**: `@vitest/coverage-v8`
+- **デバッガー**: `debug`
+- **エラーハンドリング**: `neverthrow`
 - **ビルドツール**: `TypeScript Compiler`
