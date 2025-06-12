@@ -15,7 +15,6 @@ mcp-template/
   ├── dist/                          # ビルド成果物
   ├── project/                       # プロジェクト管理
   │   ├── RULE.md                    # 開発ルール
-  │   ├── QUALITY.md                 # 品質基準
   │   ├── TECK_STACK.md              # 技術スタック
   │   ├── requirements-definition.md # 要件定義書
   │   ├── references                 # 参考資料
