@@ -26,7 +26,6 @@ mcp-template/
   └── src/                 # FSDアーキテクチャ
       ├── app/             # アプリケーション層
       ├── features/        # 機能層
-      │   └── calculator/  # 電卓機能
       ├── entities/        # エンティティ層
       └── shared/          # 共有層
           └── lib/
