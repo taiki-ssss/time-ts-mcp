@@ -35,7 +35,10 @@
       "TodoWrite",
       "Write(README.md)",
       "Write(project/tasks/**)",
-      "Write(src/**)"
+      "Write(src/**)",
+      "mcp__deepwiki__read_wiki_structure",
+      "mcp__deepwiki__read_wiki_contents",
+      "mcp__deepwiki__ask_question"
     ],
     "deny": [
       "Bash(curl:*)",
@@ -50,5 +53,7 @@
       "WebSearch(domain:*)"
     ]
   },
-  "enabledMcpjsonServers": []
+  "enabledMcpjsonServers": [
+    "deepwiki"
+  ]
 }
