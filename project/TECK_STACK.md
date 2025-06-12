@@ -2,6 +2,7 @@
 - **言語**: `Typescript`
 - **MCPフレームワーク**: `@modelcontextprotocol/sdk`
 - **スキーマバリデーション**: `zod`
+- **zod-to-json-schema**: `zod-to-json-schema`
 - **テストフレームワーク**: `vitest`
 - **テストカバレッジツール**: `@vitest/coverage-v8`
 - **デバッガー**: `debug`
