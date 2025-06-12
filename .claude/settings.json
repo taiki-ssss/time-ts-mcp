@@ -9,6 +9,7 @@
       "Bash(npm run:*)",
       "Bash(pwd)",
       "Bash(tree:*)",
+      "Bash(ls:*)",
       "Edit(README.md)",
       "Edit(project/requirements-definition.md)",
       "Edit(project/tasks/**)",
