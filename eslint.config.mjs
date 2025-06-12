@@ -13,7 +13,9 @@ const languageOptions = {
   }
 };
 
-const baseRules = {};
+const baseRules = {
+  // TODO:
+};
 
 export default [
   {
