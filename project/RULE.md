@@ -37,4 +37,4 @@
 ## タスク管理ガイドライン
 
 - `project/tasks`配下で`backlog` → `in-progress` → `done`のステータス管理
-- タスクファイルの命名規則は`[number]-[task-name].md`(`01-calculator-multiply.md`)
+- タスクファイルの命名規則は`[auto increment]-[task-name].md`(`01-calculator-multiply.md`)
