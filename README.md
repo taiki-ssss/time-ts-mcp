@@ -35,7 +35,11 @@ mcp-template/
 ## カスタムコマンド
 
 - `/project:rule`: プロジェクトのルールをに確認する
-- `/project:task`: タスクの件数を確認する
+- `/project/task:count`: タスクの件数を確認する
+- `/project/requirement:create`: 要求タスクを作成する
+- `/project/requirement:update`: 要求タスクを更新する
+- `/project/development:create`: 開発タスクを作成する
+- `/project/development:create`: 開発タスクを更新する
 
 ## 参考リンク
 
