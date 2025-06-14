@@ -1,4 +1,4 @@
-# MCP Server Template
+# MCP Server テンプレート
 
 Claude Codeで開発する用のMCPサーバーテンプレート
 
@@ -6,15 +6,16 @@ Claude Codeで開発する用のMCPサーバーテンプレート
 
 ```
 mcp-template/
-  ├── CLAUDE.md                      # プロジェクト指示書
+  ├── CLAUDE.md                      # Claude Memoryに保存される
   ├── README.md
   ├── package.json
   ├── tsconfig.json
-  ├── vitest.config.ts               # テスト設定
+  ├── eslint.config.mjs
+  ├── vitest.config.ts
   ├── coverage/                      # テストカバレッジレポート
   ├── dist/                          # ビルド成果物
   ├── project/                       # プロジェクト管理
-  │   ├── RULE.md                    # 開発ルール
+  │   ├── RULE.md                    # プロジェクトルール
   │   ├── TECK_STACK.md              # 技術スタック
   │   ├── requirements-definition.md # 要件定義書
   │   ├── references                 # 参考資料
@@ -39,4 +40,5 @@ mcp-template/
 ## 参考リンク
 
 - [Claude Code Manage permissions](https://docs.anthropic.com/en/docs/claude-code/security)
+- [built our multi-agent research system](https://www.anthropic.com/engineering/built-multi-agent-research-system)
 - [Feature-Sliced Design](https://feature-sliced.github.io/documentation/)
