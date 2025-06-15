@@ -27,6 +27,7 @@ mcp-template/
   └── src/                 # FSDアーキテクチャ
       ├── app/             # アプリケーション層
       ├── features/        # 機能層
+      │   └── server/      # MCP Tool 登録
       ├── entities/        # エンティティ層
       └── shared/          # 共有層
           └── lib/
