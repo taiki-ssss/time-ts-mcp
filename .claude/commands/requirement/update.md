@@ -1,4 +1,4 @@
-TODO: スケーリングルールを追加する
+TODO:
 
 $ARGUMENTS
 

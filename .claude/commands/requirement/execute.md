@@ -1,3 +1,5 @@
+$ARGUMENTSの要求タスクを実行してください
+
 # 基本ルール
 
 - 作業時は必ずタスクファイルを`project/tasks/backlog`に作成
