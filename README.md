@@ -17,6 +17,7 @@ mcp-template/
   ├── project/                       # プロジェクト管理
   │   ├── RULE.md                    # プロジェクトルール
   │   ├── TECK_STACK.md              # 技術スタック
+  │   ├── BASE_STRUCTURE.md          # 基本ディレクトリ構造
   │   ├── requirements               # 要件定義書
   │   ├── references                 # 参考資料
   │   ├── tasks/                     # タスク管理
