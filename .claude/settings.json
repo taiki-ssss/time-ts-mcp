@@ -17,6 +17,7 @@
       "Glob",
       "Grep",
       "LS",
+      "Agent",
       "MultiEdit(project/tasks/**)",
       "MultiEdit(project/requirements/**)",
       "MultiEdit(src/**)",
