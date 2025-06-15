@@ -7,14 +7,14 @@
 ## To-Be(完了条件のチェックリスト)
 
 - [ ] `backlog`から`in-progress`へタスクを移動
-- [ ] 完了条件 1
-- [ ] 完了条件 2
-- [ ] ドキュメント更新
+- [ ] 機能要件の明確化
+- [ ] 入力パラメータの定義
+- [ ] 出力フォーマットの定義
+- [ ] エラーケースの洗い出し
+- [ ] 要件定義書への反映
+- [ ] 開発タスクの作成
 - [ ] `in-progress`から`done`へタスクを移動
 
 ## 作業ログ
 
 - [YYYY-MM-DD HH:MM]：`backlog`から`in-progress`へタスクを移動した
-- [YYYY-MM-DD HH:MM]：[完了条件 1]
-- [YYYY-MM-DD HH:MM]：[完了条件 2]
-- [YYYY-MM-DD HH:MM]：`in-progress`から`done`へタスクを移動した
