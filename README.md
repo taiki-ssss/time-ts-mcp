@@ -17,7 +17,7 @@ mcp-template/
   ├── project/                       # プロジェクト管理
   │   ├── RULE.md                    # プロジェクトルール
   │   ├── TECK_STACK.md              # 技術スタック
-  │   ├── requirements-definition.md # 要件定義書
+  │   ├── requirements               # 要件定義書
   │   ├── references                 # 参考資料
   │   ├── tasks/                     # タスク管理
   │   │   ├── backlog/               # 未着手課題
