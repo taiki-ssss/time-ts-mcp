@@ -5,7 +5,7 @@ $ARGUMENTSの要求タスクを実行してください
 - 作業時は必ずタスクファイルを`project/tasks/backlog`に作成
 - `project/template/DEVELOPMENT_TASK.md`沿ったタスク記述
 - タスクファイルの命名規則は`[auto increment]-[task-name]-development.md`(`02-calculator-multiply-development.md`)
-- 要件定義書の作成(`project/docs/requirements/*.md`)
+- 要件定義書の作成(`project/requirements/*.md`)
 
 # 適応型タスクオーケストレーター
 
