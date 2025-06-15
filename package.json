@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc && chmod 755 dist/app/index.js",
+    "prepare": "npm run build",
     "lint": "eslint . && tsc --noEmit",
     "lint:fix": "eslint . --fix",
     "test": "vitest run",
