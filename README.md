@@ -37,9 +37,8 @@ mcp-template/
 - `/project:rule`: プロジェクトのルールをに確認する
 - `/project/task:count`: タスクの件数を確認する
 - `/project/requirement:create`: 要求タスクを作成する
-- `/project/requirement:update`: 要求タスクを更新する
-- `/project/development:create`: 開発タスクを作成する
-- `/project/development:create`: 開発タスクを更新する
+- `/project/requirement:execute`: 要求タスクを実行する
+- `/project/development:execute`: 開発タスクを実行する
 
 ## 参考リンク
 
