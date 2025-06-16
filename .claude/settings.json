@@ -12,6 +12,7 @@
       "Bash(npm run:*)",
       "Bash(pwd)",
       "Bash(rm:*)",
+      "Bash(rg:*)",
       "Bash(tree:*)",
       "Edit(README.md)",
       "Edit(project/requirements/**)",
@@ -54,10 +55,10 @@
       "Bash(npm uninstall:*)",
       "Bash(npx:*)",
       "Bash(wget:*)",
-      "NotebookEdit(*)",
-      "NotebookRead(*)",
-      "WebFetch(domain:*)",
-      "WebSearch(domain:*)"
+      "NotebookEdit",
+      "NotebookRead",
+      "WebFetch",
+      "WebSearch"
     ]
   },
   "enabledMcpjsonServers": [
