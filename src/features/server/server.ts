@@ -12,17 +12,16 @@ export type CalculatorError = {
 
 export async function addTool(
   { a, b }: { a: number; b: number },
-  // テスト可能にするためのオプショナルな依存性注入
-  options: { 
+  options: {
     logger?: (message: string, ...args: any[]) => void;
     textFormatter?: (a: number, b: number, result: number) => string;
   } = {}
 ): Promise<Result<{ content: Array<{ type: 'text'; text: string }> }, CalculatorError>> {
   const logger = options.logger || log;
   const formatText = options.textFormatter || ((a, b, result) => `The sum of ${a} and ${b} is ${result}.`);
-  
+
   logger('addTool called with a=%d, b=%d', a, b);
-  
+
   try {
     // 数値の妥当性チェック
     if (!Number.isFinite(a) || !Number.isFinite(b)) {
@@ -34,7 +33,7 @@ export async function addTool(
     }
 
     const result = a + b;
-    
+
     // オーバーフローチェック
     if (!Number.isFinite(result)) {
       logger('Calculation overflow: %d + %d = %s', a, b, result);
@@ -45,10 +44,10 @@ export async function addTool(
     }
 
     logger('Addition successful: %d + %d = %d', a, b, result);
-    
+
     // フォーマッター関数を呼び出してテキストを生成（例外テスト用）
     const formattedText = formatText(a, b, result);
-    
+
     return ok({
       content: [
         {
@@ -69,17 +68,16 @@ export async function addTool(
 
 export async function subtractTool(
   { a, b }: { a: number; b: number },
-  // テスト可能にするためのオプショナルな依存性注入
-  options: { 
+  options: {
     logger?: (message: string, ...args: any[]) => void;
     textFormatter?: (a: number, b: number, result: number) => string;
   } = {}
 ): Promise<Result<{ content: Array<{ type: 'text'; text: string }> }, CalculatorError>> {
   const logger = options.logger || log;
   const formatText = options.textFormatter || ((a, b, result) => `The difference of ${a} and ${b} is ${result}.`);
-  
+
   logger('subtractTool called with a=%d, b=%d', a, b);
-  
+
   try {
     // 数値の妥当性チェック
     if (!Number.isFinite(a) || !Number.isFinite(b)) {
@@ -91,7 +89,7 @@ export async function subtractTool(
     }
 
     const result = a - b;
-    
+
     // オーバーフローチェック
     if (!Number.isFinite(result)) {
       logger('Calculation overflow: %d - %d = %s', a, b, result);
@@ -102,10 +100,10 @@ export async function subtractTool(
     }
 
     logger('Subtraction successful: %d - %d = %d', a, b, result);
-    
+
     // フォーマッター関数を呼び出してテキストを生成（例外テスト用）
     const formattedText = formatText(a, b, result);
-    
+
     return ok({
       content: [
         {
@@ -127,7 +125,7 @@ export async function subtractTool(
 // エラーハンドリングラッパー関数（テスタブルにするため分離）
 export async function addToolWrapper(args: { a: number; b: number }) {
   const result = await addTool(args);
-  
+
   return result.match(
     (success) => success,
     (error) => {
@@ -147,7 +145,7 @@ export async function addToolWrapper(args: { a: number; b: number }) {
 
 export async function subtractToolWrapper(args: { a: number; b: number }) {
   const result = await subtractTool(args);
-  
+
   return result.match(
     (success) => success,
     (error) => {
@@ -167,7 +165,7 @@ export async function subtractToolWrapper(args: { a: number; b: number }) {
 
 export function createStdioServer(): McpServer {
   log('Creating MCP Server instance');
-  
+
   const server = new McpServer({
     name: "calculator",
     version: "1.0.0",
