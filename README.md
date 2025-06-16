@@ -25,12 +25,16 @@ mcp-template/
   │   │   ├── in-progress/           # 着手中課題
   │   │   └── done/                  # 完了課題
   │   └── template/                  # タスクテンプレート
-  └── src/                 # FSDアーキテクチャ
-      ├── app/             # アプリケーション層
-      ├── features/        # 機能層
-      │   └── server/      # MCP Tool 登録
-      ├── entities/        # エンティティ層
-      └── shared/          # 共有層
+  └── src/                           # FSDアーキテクチャ
+      ├── app/                       # アプリケーション層
+      ├── features/                  # 機能層
+      |   ├── [feature-name]
+      |   |   ├── tests/             # テスト層
+      |   |   ├── [feature-name].ts  # MCP Tool
+      |   |   └── index.ts           # API
+      │   └── server/                # MCP Tool 登録
+      ├── entities/                  # エンティティ層
+      └── shared/                    # 共有層
           └── lib/
 ```
 
