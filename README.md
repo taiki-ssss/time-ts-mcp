@@ -1,53 +1,83 @@
-# MCP Server テンプレート
+# MCP Time Server
 
-Claude Codeで開発する用のMCPサーバーテンプレート
+現在の日時を様々なフォーマットで取得するMCPサーバー
 
-## ディレクトリ構造
+## セットアップ
 
-```
-mcp-template/
-  ├── CLAUDE.md                      # Claude Memoryに保存される
-  ├── README.md
-  ├── package.json
-  ├── tsconfig.json
-  ├── eslint.config.mjs
-  ├── vitest.config.ts
-  ├── coverage/                      # テストカバレッジレポート
-  ├── dist/                          # ビルド成果物
-  ├── project/                       # プロジェクト管理
-  │   ├── RULE.md                    # プロジェクトルール
-  │   ├── TECK_STACK.md              # 技術スタック
-  │   ├── BASE_STRUCTURE.md          # 基本ディレクトリ構造
-  │   ├── requirements               # 要件定義書
-  │   ├── references                 # 参考資料
-  │   ├── tasks/                     # タスク管理
-  │   │   ├── backlog/               # 未着手課題
-  │   │   ├── in-progress/           # 着手中課題
-  │   │   └── done/                  # 完了課題
-  │   └── template/                  # タスクテンプレート
-  └── src/                           # FSDアーキテクチャ
-      ├── app/                       # アプリケーション層
-      ├── features/                  # 機能層
-      |   ├── [feature-name]
-      |   |   ├── tests/             # テスト層
-      |   |   ├── [feature-name].ts  # MCP Tool
-      |   |   └── index.ts           # API
-      │   └── server/                # MCP Tool 登録
-      ├── entities/                  # エンティティ層
-      └── shared/                    # 共有層
-          └── lib/
+### 1. ビルド
+
+```bash
+npm install
+npm run build
 ```
 
-## カスタムコマンド
+### 2. Claude Desktop設定
 
-- `/project:rule`: プロジェクトのルールをに確認する
-- `/project/task:count`: タスクの件数を確認する
-- `/project/requirement:create`: 要求タスクを作成する
-- `/project/requirement:execute`: 要求タスクを実行する
-- `/project/development:execute`: 開発タスクを実行する
+Claude Desktopの設定ファイル（`claude_desktop_config.json`）にサーバーを追加します：
 
-## 参考リンク
+**macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+**Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
 
-- [Claude Code Manage permissions](https://docs.anthropic.com/en/docs/claude-code/security)
-- [built our multi-agent research system](https://www.anthropic.com/engineering/built-multi-agent-research-system)
-- [Feature-Sliced Design](https://feature-sliced.github.io/documentation/)
+```json
+{
+  "mcpServers": {
+    "time-server": {
+      "command": "node",
+      "args": ["/path/to/time-ts-mcp/dist/app/index.js"],
+      "env": {}
+    }
+  }
+}
+```
+
+### 3. Claude Desktopの再起動
+
+設定を反映させるためにClaude Desktopを再起動してください。
+
+### 4. 使用確認
+
+Claude Desktopで以下のようにツールが使用できるようになります：
+
+```
+現在の東京時間を教えて
+```
+
+```
+ニューヨーク時間をRFC形式で表示して
+```
+
+## 機能
+
+### getCurrentTime ツール
+
+現在の日時を指定されたタイムゾーンとフォーマットで取得します。
+
+#### パラメータ
+
+- `timezone` (string, optional): タイムゾーン (デフォルト: "Asia/Tokyo")
+- `format` (string, optional): フォーマット形式 - "iso" | "rfc" | "custom" (デフォルト: "iso")
+- `customFormat` (string, optional): カスタムフォーマット文字列 (デフォルト: "YYYY-MM-DD HH:mm:ss")
+
+#### フォーマット形式
+
+- **iso**: ISO 8601形式 (例: 2025-06-18T15:30:45+09:00)
+- **rfc**: RFC 2822形式 (例: Wed, Jun 18, 2025, 15:30:45 GMT+9)
+- **custom**: カスタムフォーマット (YYYY, MM, DD, HH, mm, ss のトークンを使用)
+
+#### 使用例
+
+```json
+{
+  "timezone": "America/New_York",
+  "format": "iso"
+}
+```
+
+```json
+{
+  "timezone": "UTC",
+  "format": "custom",
+  "customFormat": "YYYY/MM/DD HH:mm"
+}
+```
+
