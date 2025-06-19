@@ -24,7 +24,7 @@
 
 ## 作業ログ
 
-- [YYYY-MM-DD HH:MM]：`backlog`から`in-progress`へタスクを移動した
-- [YYYY-MM-DD HH:MM]：[完了条件 1]
-- [YYYY-MM-DD HH:MM]：[完了条件 2]
-- [YYYY-MM-DD HH:MM]：`in-progress`から`done`へタスクを移動した
+- [YYYY-MM-DD HH:mm:ss]：`backlog`から`in-progress`へタスクを移動した
+- [YYYY-MM-DD HH:mm:ss]：[完了条件 1]
+- [YYYY-MM-DD HH:mm:ss]：[完了条件 2]
+- [YYYY-MM-DD HH:mm:ss]：`in-progress`から`done`へタスクを移動した

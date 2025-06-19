@@ -20,4 +20,4 @@
 
 ## 作業ログ
 
-- [YYYY-MM-DD HH:MM]：`backlog`から`in-progress`へタスクを移動した
+- [YYYY-MM-DD HH:mm:ss]：`backlog`から`in-progress`へタスクを移動した
