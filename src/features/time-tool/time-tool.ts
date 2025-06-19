@@ -1,28 +1,10 @@
-import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
-import { z } from 'zod';
-import debug from 'debug';
 import { Result, ok, err } from 'neverthrow';
+import debug from 'debug';
+import { TimeError, GetCurrentTimeArgs } from './types';
 
-const log = debug('mcp:time-server');
+const log = debug('mcp:time-tool');
 
-// Types
-type TimeError = {
-  type: 'INVALID_TIMEZONE' | 'INVALID_FORMAT' | 'TIME_ERROR';
-  message: string;
-};
-
-interface GetCurrentTimeArgs {
-  timezone?: string;
-  format?: 'iso' | 'rfc' | 'custom';
-  customFormat?: string;
-}
-
-const TimezoneSchema = z.string().default('Asia/Tokyo');
-const FormatSchema = z.enum(['iso', 'rfc', 'custom']).default('iso');
-const CustomFormatSchema = z.string().default('YYYY-MM-DD HH:mm:ss');
-
-// Time tool functions
-async function getCurrentTime(
+export async function getCurrentTime(
   args: GetCurrentTimeArgs
 ): Promise<Result<{ content: Array<{ type: 'text'; text: string }> }, TimeError>> {
   const timezone = args.timezone || 'Asia/Tokyo';
@@ -138,7 +120,7 @@ async function getCurrentTime(
   }
 }
 
-async function getCurrentTimeWrapper(args: GetCurrentTimeArgs) {
+export async function getCurrentTimeWrapper(args: GetCurrentTimeArgs) {
   const result = await getCurrentTime(args);
 
   return result.match(
@@ -157,35 +139,3 @@ async function getCurrentTimeWrapper(args: GetCurrentTimeArgs) {
     }
   );
 }
-
-export function createStdioServer(): McpServer {
-  log('Creating MCP Time Server instance');
-
-  const server = new McpServer({
-    name: "time-server",
-    version: "1.0.0",
-    capabilities: {
-      resources: {},
-      tools: {},
-    },
-  });
-
-  server.tool(
-    "getCurrentTime",
-    "現在の日時を取得します",
-    {
-      timezone: TimezoneSchema,
-      format: FormatSchema,
-      customFormat: CustomFormatSchema,
-    },
-    getCurrentTimeWrapper
-  );
-
-  log('MCP Time Server created with getCurrentTime tool');
-  return server;
-}
-
-// テスト用のエクスポート関数
-export const getCurrentTimeTool = getCurrentTime;
-export const getCurrentTimeToolWrapper = getCurrentTimeWrapper;
-export type { GetCurrentTimeArgs, TimeError };

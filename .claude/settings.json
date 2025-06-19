@@ -37,8 +37,11 @@
     ],
     "deny": [
       "Bash",
+      "Write(*.sh)",
+      "Edit(*.sh)",
       "WebSearch",
-      "WebFetch"
+      "WebFetch",
+      "mcp__ide__executeCode"
     ]
   },
   "enabledMcpjsonServers": [

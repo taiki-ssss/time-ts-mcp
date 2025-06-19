@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import { createStdioServer } from "../features/server/index.js";
+import { createStdioServer } from "../features/server/index";
 
 const server = createStdioServer();
 

@@ -14,7 +14,7 @@ export default defineConfig({
         '**/*.mjs',
         '**/*.config.ts',
         '**/*.test.ts',
-        '**/index.ts',
+        '**/index.ts'
       ],
       thresholds: {
         statements: 100,
